@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Vista Hotel</title>
+    
+     <style>
+            /* General Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(to bottom, #1abc9c, #16a085);
+                color: #333;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            h1, h2 {
+                text-align: center;
+                color: #f6872c;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            h2 {
+                color: black;
+                font-size: 1.2rem;
+                font-weight: 300;
+            }
+
+            .form-container {
+                background: #ffffff;
+                border-radius: 15px;
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                width: 600px;
+                max-width: 95%;
+            }
+
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px 30px;
+            }
+
+            form > div {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #34495e;
+                margin-bottom: 5px;
+            }
+
+            input, select {
+                padding: 12px 15px;
+                font-size: 1rem;
+                border: 2px solid #3498db;
+                border-radius: 8px;
+                outline: none;
+                transition: all 0.3s ease;
+            }
+
+            input:focus, select:focus {
+                border-color: #1abc9c;
+                box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+            }
+
+            .submit-btn {
+                grid-column: span 2;
+                background: linear-gradient(45deg, #3498db, #1abc9c);
+                color: #fff;
+                border: none;
+                padding: 15px;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .submit-btn:hover {
+                background: linear-gradient(45deg, #1abc9c, #3498db);
+            }
+
+            .back-button {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .back-button a {
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+                color: #e74c3c;
+                border: 2px solid #e74c3c;
+                border-radius: 5px;
+                padding: 10px 20px;
+                transition: background 0.3s, color 0.3s, border-color 0.3s;
+            }
+
+            .back-button a:hover {
+                background: #e74c3c;
+                color: #fff;
+                border-color: #c0392b;
+            }
+    </style>
+<!--    /*<link rel="stylesheet" href="style_add_admin.css">*/-->
+</head>
+<body>
+   
+                
+                
+                
+                 <div class="form-container">
+            <h1>Velvet Vista Hotel</h1>
+            <h2>New Employee Form</h2>
+            <form action="Add_Admin" method="post">
+                <div>
+                    <label for="a_name">Name</label>
+                    <input type="text" name="a_name" id="a_name" required>
+                </div>
+                <div>
+                    <label for="a_email">Email</label>
+                    <input type="email" id="a_email" name="a_email" required>
+                </div>
+                <div>
+                    <label for="a_mobile">Mobile Number</label>
+                    <input type="number" id="a_mobile" name="a_mobile" required>
+                </div>
+                <div>
+                    <label for="a_adhar">Aadhar Number</label>
+                    <input type="number" id="a_adhar" name="a_adhar" required>
+                </div>
+                <div>
+                    <label for="a_gender">Gender</label>
+                    <select id="a_gender" name="a_gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="a_age">Age</label>
+                    <input type="number" id="a_age" name="a_age" required>
+                </div>
+               
+                <div>
+                    <label for="a_password">Password</label>
+                    <input type="password" id="a_password" name="a_password" required>
+                </div>
+               
+                <button type="submit" class="submit-btn">Add Admin</button>
+            </form>
+            <div class="back-button">
+                 <a href="edit_admin.html">Back</a>
+            </div>
+        </div>
+    
+       <script>
+    function validateForm(event) {
+        let age = document.getElementById("a_age").value;
+        let mobile = document.getElementById("a_mobile").value;
+        let aadhar = document.getElementById("a_adhar").value;
+
+        // Validate Age (must be less than 60)
+        if (age >= 60) {
+            alert("Age must be less than 60.");
+            event.preventDefault(); // Prevent form submission
+            return false
+        }
+
+        // Validate Mobile Number (must be exactly 10 digits)
+        if (mobile.length !== 10) {
+            alert("Mobile number must be exactly 10 digits.");
+            event.preventDefault();
+            return false;
+        }
+
+        // Validate Aadhar Number (must be exactly 12 digits)
+        if (aadhar.length !== 12) {
+            alert("Aadhar number must be exactly 12 digits.");
+            event.preventDefault();
+            return false;
+        }
+
+        return true;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("form").addEventListener("submit", validateForm);
+    });
+</script>
+    
+        
+<!--                <form action="Add_Admin" method="post">
+                    <input type="text" name="a_name" placeholder="Enter Name : ">
+                    <br><br>
+                    <input type="text" name="a_email" placeholder="Enter Email : ">
+                    <br><br>
+                    <input type="text" name="a_mobile" placeholder="Enter Number : ">
+                    <br><br>
+                    <input type="number" name="a_adhar" placeholder="Enter Adhar Number : ">
+                    <br><br>
+                    <input type="text" name="a_gender" placeholder="Enter Gender : ">
+                    <br><br>
+                    <input type="number" name="a_age" placeholder="Enter Age : ">
+                    <br><br>
+                    <input type="password" name="a_password" placeholder="Enter password : ">
+                    <br><br>
+                    <input type="submit" value="Add Admin">
+                    <br><br>
+                </form>
+                <br>
+                <br>
+            </div>
+        </section>
+        <div class="back-button" align="center">
+            <a href="edit_admin.html">Back</a>
+        </div>
+    </main>
+    -->
+</body>
+</html>

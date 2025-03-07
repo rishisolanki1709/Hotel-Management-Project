@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family:serif; */
+        }
+
+        .popup{
+           width: 400px;
+            border: 5px solid black;
+            border-radius: 40px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            background-color: #47b5ec;
+            visibility: hidden;
+            transition: transform 1s, top 1s;
+        }
+        .open-popup{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+        }
+
+
+        .popup img{
+            width: 100px;
+            margin-top: -50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .popup h2{
+            color: black;
+            font-size: 38px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+        }
+        .popup button{
+            width: 100px;
+            margin-top: 50px;
+            padding: 10px 0;
+            border: 0;
+            background-color: rgb(255, 255, 255);
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+    </style>
+</head>
+
+<body>
+        <div class="popup" id="popup">
+            <img src="tick.png" alt="img-error">
+            <h2>Room Booking SuccessFull!..</h2>
+            <p>Your Room is booked successfully.Enjoy your time with Velvet-Vista ^-^</p>
+            <br>
+            <p>
+                <u>Thank you</u>
+            </p>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+<script>
+    let popup = document.getElementById("popup");
+    function openPopup(){
+        popup.classList.add("open-popup");
+    }
+    function closePopup(){
+        popup.classList.remove("open-popup");
+    }
+    window.onload = function() {
+        openPopup();
+    };
+</script>
+
+</body>
+
+</html>

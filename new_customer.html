@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Velvet Vista</title>
+        <link rel="icon" href="icon.png">
+        <style>
+            /* General Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(to bottom, #1abc9c, #16a085);
+                color: #333;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            h1, h2 {
+                text-align: center;
+                color: #f6872c;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            h2 {
+                color: black;
+                font-size: 1.2rem;
+                font-weight: 300;
+            }
+
+            .form-container {
+                background: #ffffff;
+                border-radius: 15px;
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                width: 600px;
+                max-width: 95%;
+            }
+
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px 30px;
+            }
+
+            form > div {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #34495e;
+                margin-bottom: 5px;
+            }
+
+            input, select {
+                padding: 12px 15px;
+                font-size: 1rem;
+                border: 2px solid #3498db;
+                border-radius: 8px;
+                outline: none;
+                transition: all 0.3s ease;
+            }
+
+            input:focus, select:focus {
+                border-color: #1abc9c;
+                box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+            }
+
+            .submit-btn {
+                grid-column: span 2;
+                background: linear-gradient(45deg, #3498db, #1abc9c);
+                color: #fff;
+                border: none;
+                padding: 15px;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .submit-btn:hover {
+                background: linear-gradient(45deg, #1abc9c, #3498db);
+            }
+
+            .back-button {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .back-button a {
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+                color: #e74c3c;
+                border: 2px solid #e74c3c;
+                border-radius: 5px;
+                padding: 10px 20px;
+                transition: background 0.3s, color 0.3s, border-color 0.3s;
+            }
+
+            .back-button a:hover {
+                background: #e74c3c;
+                color: #fff;
+                border-color: #c0392b;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+            <h1>Velvet Vista Hotel</h1>
+            <h2>Customer Form</h2>
+            <form action="New_Customer" method="post">
+                <div>
+                    <label for="cus_name">Name</label>
+                    <input type="text" id="cus_name" name="cus_name" required>
+                </div>
+                <div>
+                    <label for="cus_email">Email</label>
+                    <input type="email" id="cus_email" name="cus_email" required>
+                </div>
+                <div>
+                    <label for="cus_mobile">Mobile Number</label>
+                    <input type="number" id="cus_mobile" name="cus_mobile" required>
+                </div>
+                <div>
+                    <label for="cus_adhar">Aadhar Number</label>
+                    <input type="number" id="cus_adhar" name="cus_adhar" required>
+                </div>
+                <div>
+                    <label for="cus_gender">Gender</label>
+                    <select id="cus_gender" name="cus_gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="cus_age">Age</label>
+                    <input type="number" id="cus_age" name="cus_age" required>
+                </div>
+                <div>
+                    <label for="cus_country">Country</label>
+                    <select id="cus_country" name="cus_country" required>
+                        <option value="">Select Country</option>
+                        <option value="canada">Canada</option>
+                        <option value="australia">Australia</option>
+                        <option value="germany">Germany</option>
+                        <option value="france">France</option>
+                        <option value="india">India</option>
+                        <option value="japan">Japan</option>
+                        <option value="china">China</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="south-africa">South Africa</option>
+                        <option value="mexico">Mexico</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Next</button>
+            </form>
+            <div class="back-button">
+                 <a href="employee_home.html">Back</a>
+            </div>
+        </div>
+        
+        <script>
+    function validateForm(event) {
+        let age = document.getElementById("cus_age").value;
+        let mobile = document.getElementById("cus_mobile").value;
+        let aadhar = document.getElementById("cus_adhar").value;
+
+        // Validate Age (must be less than 60)
+        if (age >= 60) {
+            alert("Age must be less than 60.");
+            event.preventDefault(); // Prevent form submission
+            return false;
+        }
+
+        // Validate Mobile Number (must be exactly 10 digits)
+        if (mobile.length !== 10) {
+            alert("Mobile number must be exactly 10 digits.");
+            event.preventDefault();
+            return false;
+        }
+
+        // Validate Aadhar Number (must be exactly 12 digits)
+        if (aadhar.length !== 12) {
+            alert("Aadhar number must be exactly 12 digits.");
+            event.preventDefault();
+            return false;
+        }
+
+        return true;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("form").addEventListener("submit", validateForm);
+    });
+</script>
+
+    </body>
+</html>

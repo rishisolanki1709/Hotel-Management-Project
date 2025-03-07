@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Velvet Vista Hotel - Check Out</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Resetting styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Body and layout styling */
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f7f6;
+                color: #333;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 2rem;
+                margin-top: 30px;
+                color: #333;
+            }
+
+            /* Main content styling */
+            main {
+                display: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 50px;
+            }
+
+            /* Form container styling */
+            form {
+                background-color: white;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                border-radius: 8px;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            form input[type="text"] {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 1rem;
+                color: #333;
+            }
+
+            form input[type="submit"] {
+                width: 100%;
+                padding: 12px;
+                background-color: #1abc9c;
+                color: white;
+                font-size: 1.1rem;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            form input[type="submit"]:hover {
+                background-color: #16a085;
+            }
+
+            /* Footer styling (optional if needed later) */
+            footer {
+                text-align: center;
+                margin-top: 40px;
+                padding: 10px;
+                background-color: #ecf0f1;
+            }
+
+            /* Responsive design */
+            @media (max-width: 600px) {
+                h2 {
+                    font-size: 1.8rem;
+                }
+
+                form {
+                    padding: 20px;
+                }
+
+                form input[type="submit"] {
+                    font-size: 1rem;
+                }
+            }
+
+            /* Back Button */
+            .back-button {
+                margin-top: 20px;
+            }
+
+            .back-button a {
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+                color: #e74c3c;
+                border: 2px solid #e74c3c;
+                border-radius: 5px;
+                padding: 10px 20px;
+                transition: background 0.3s, color 0.3s, border-color 0.3s;
+            }
+
+            .back-button a:hover {
+                background: #e74c3c;
+                color: #fff;
+                border-color: #c0392b;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h2>Check Out</h2>
+        <main>
+            <section>
+                <div align="center">
+                    <form action="Check_Rnumber" method="post">
+                        <input type="text" name="rnumber" placeholder="Enter Room Number" />
+                        <input type="submit" value="Check" />
+                    </form>
+                </div>
+            </section>
+            <div>
+                <br>
+                <br>
+            </div>
+          
+            <div class="back-button" align="center">
+                <a href="employee_home.html">Back</a>
+            </div>
+        </main>
+    </body>
+</html>

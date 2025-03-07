@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Setting - Velvet Vista</title>
+    
+    <style>
+        /* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Menu Section */
+.menu {
+    margin: 20px auto;
+    width: 300px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.menu a:hover {
+    background: #3498db;
+    color: #fff;
+    border-color: #1abc9c;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;
+}
+
+.back-button a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.back-button a:hover {
+    background: #e74c3c;
+    color: #fff;
+    border-color: #c0392b;
+}
+
+    </style>
+    
+    <!--<link rel="stylesheet" href="style_edit_admin.css">-->
+</head>
+<body>
+    <h1 align="center">Velvet Vista</h1>
+    <h2 align="center">Admin Setting</h2>
+
+    <main>
+        <section>
+            <div class="menu">
+                <ul>
+                    <li><a href="add_admin.html">Add Admin</a></li>
+                    <li><a href="show_all_admin.jsp">Show All Admin</a></li>
+                    <li><a href="delete_admin.html">Delete Admin</a></li>
+                    <li><a href="search_admin.html">Update Admin</a></li>
+                </ul>
+                
+            </div>
+            <div class="back-button" align="center">
+                <a href="admin_home.html">Back</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
